@@ -57,6 +57,18 @@ manipulate({
 manipulate({
   dat_cnt_cur <- dat [ Country == cnt_cur, .( Count = sum ( Count )), Date ]
   dat_cnt_cur [, plot ( Count ~ Date, main = cnt_cur )]
-  
 }, cnt_cur = do.call ( picker, args = as.list ( countries )))
 
+
+cnt_cur <- "Iran"
+dat_cnt_cur [, Date := as.numeric ( as.Date ( Date ))]
+
+# S = Start, M = Max, H = Half-Max Date, Cf = Hill coefficient ~
+#  Steepness at H
+formula <- Count ~ S + M * ( Date^Cf / ( H^Cf + Date^Cf ))
+
+model <- nls ( formula, data = dat_cnt_cur,
+               start = c ( S = as.numeric ( as.Date ( "2020-02-10" )),
+                           M = 2000,
+                           H = 10,
+                           Cf = 3 ))
