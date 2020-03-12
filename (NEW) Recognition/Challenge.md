@@ -8,4 +8,4 @@ D'Haese David
 
 ## Recognition
 
-Time to play around with __machine vision__ and explore what out there. In group, Google for `recognition sklearn svm` and decide on a interesting tutorial to conduct, either from sklearn itself or from outside. Make sure that you end up with a Jupyter Notebook and write a conclusion of your own. The theory on Support Vector Machines will follow later.
+Time to play around with __machine vision__ and explore what is out there. In group, search the internet for `recognition sklearn svm` and decide on a interesting tutorial to conduct, either from sklearn itself or from outside. Make sure that you end up with a Jupyter notebook and write a conclusion of your own. The theory on _Support Vector Machines_ will follow later.
